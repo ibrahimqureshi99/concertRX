@@ -22,7 +22,7 @@ export default function TopNav() {
     <div className={`flex w-full h-full max-h-[92px] justify-between px-20 py-6 align-middle fixed top-0 z-10 ${
       scrollPos > 0 ? "bg-white" : "bg-transparent" 
     }`}>
-      <div className='logo'>
+      <div className='logo mt-0.5'>
         <svg width="137" height="40" viewBox="0 0 137 40" fill="none" xmlns="http://www.w3.org/2000/svg"
           className='object-cover'>
           <g clip-path="url(#clip0_259_4366)">
@@ -63,14 +63,14 @@ export default function TopNav() {
         </svg>
       </div>
       <div className='primary-nav self-center'>
-        <ul className='flex gap-6'>
-          <li>
+        <ul className='flex gap-6 ml-[61px]'>
+          <li className='text-sm leading-[14px] font-bold text-[color:var(--primary-color)]'>
             Product
           </li>
-          <li>
+          <li className='text-sm leading-[14px] font-bold'>
             Our Story
           </li>
-          <li>
+          <li className='text-sm leading-[14px] font-bold'>
             Pricing
           </li>
         </ul>
@@ -78,11 +78,11 @@ export default function TopNav() {
       <div className='primary-nav self-center'>
         <ul className='flex gap-6'>
           <li
-            className='text-[color:var(--primary-color)] self-center'>
+            className='leading-4 font-semibold text-[color:var(--primary-color)] self-center'>
             Login
           </li>
           <li>
-            <button className='bg-[color:var(--primary-color)] text-white px-6 py-[14px] rounded-[22px] text-base leading-4'>
+            <button className='bg-[color:var(--primary-color)] text-white px-6 py-[14px] rounded-[22px] text-base leading-4 font-bold'>
               Get Started
             </button>
           </li>
