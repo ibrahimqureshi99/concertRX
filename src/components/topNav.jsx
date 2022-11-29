@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function TopNav() {
+
+  // useStates 
+  const [scrollPos, setScrollPos] = useState(0)         //set scroll position
+
+  // useEffect for nav color on scroll
+  useEffect(() => {
+    const updateScrollPos = () => {
+      setScrollPos(window.scrollY)
+    }
+
+    window.addEventListener('scroll', updateScrollPos)
+
+    updateScrollPos()
+
+    return () => window.removeEventListener('scroll', updateScrollPos)
+  }, [])
+
   return (
-    <div className='flex w-full h-full max-h-[92px] justify-between px-20 py-6 align-middle fixed top-0 z-10'>
+    <div className={`flex w-full h-full max-h-[92px] justify-between px-20 py-6 align-middle fixed top-0 z-10 ${
+      scrollPos > 0 ? "bg-white" : "bg-transparent" 
+    }`}>
       <div className='logo'>
         <svg width="137" height="40" viewBox="0 0 137 40" fill="none" xmlns="http://www.w3.org/2000/svg"
           className='object-cover'>
